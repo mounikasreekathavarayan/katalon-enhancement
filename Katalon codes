@@ -1,0 +1,44 @@
+
+# alphanumeric incriment 
+
+def str = "abc129zA99"
+
+// Check if the last character is "z"
+if (str[-1] == "z") {
+  // Append "AA" to the string
+  str += "A"
+} 
+else if (str[-1] == "9") {
+  // Increment the number
+  
+  str = str + 1
+}
+
+else {
+  // Increment the string
+  str = str.next()
+}
+
+println str
+
+# keyword login 
+
+/**
+* Logs in to the application using the specified username and password.
+*
+* @param username The username to use for login.
+* @param password The password to use for login.
+*/
+def login(username, password) {
+    // Enter the username
+    WebUI.setText(findTestObject('login/username_field'), username)
+    
+    // Enter the password
+    WebUI.setText(findTestObject('login/password_field'), password)
+    
+    // Click the login button
+    WebUI.click(findTestObject('login/login_button'))
+    
+    // Wait for the login to complete
+    WebUI.waitForPageLoad()
+}
